@@ -5,40 +5,42 @@
 <title>ArchiNow</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
-    /* Base & Reset */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Roboto', sans-serif; background: #fefcf9; color: #111; line-height:1.6; }
-    a { text-decoration:none; color: inherit; }
-    .container { width:90%; max-width:1200px; margin:auto; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Roboto', sans-serif; background:#fefcf9; color:#111; line-height:1.6; }
+a { text-decoration:none; color: inherit; }
+.container { width:90%; max-width:1200px; margin:auto; }
 
-    /* Header */
-    header { padding:60px 20px; text-align:center; background:#fff; box-shadow:0 3px 15px rgba(0,0,0,0.1); position:relative; z-index:2; }
-    .quote { font-style:italic; color:#555; font-size:1.2em; margin-bottom:15px; }
-    h1 { font-family:'Montserrat', sans-serif; font-size:3em; color:#111; margin-bottom:10px; }
-    p { font-size:1em; color:#555; }
+/* Header */
+header { padding:60px 20px; text-align:center; background:#fff; box-shadow:0 3px 15px rgba(0,0,0,0.1); position:relative; z-index:2; }
+.quote { font-style:italic; color:#555; font-size:1.2em; margin-bottom:15px; }
+h1 { font-family:'Montserrat', sans-serif; font-size:3em; color:#111; margin-bottom:10px; }
 
-    /* Buttons */
-    .btn { display:inline-block; padding:12px 25px; background:#111; color:white; border-radius:5px; margin:10px; cursor:pointer; transition:0.3s; font-weight:500; }
-    .btn:hover { background:#444; }
+/* Buttons */
+.btn { display:inline-block; padding:12px 25px; background:#111; color:white; border-radius:5px; margin:10px; cursor:pointer; transition:0.3s; font-weight:500; }
+.btn:hover { background:#444; }
 
-    /* Pages */
-    .page { display:none; padding:60px 0; }
-    .active { display:block; }
+/* Pages */
+.page { display:none; padding:60px 0; }
+.active { display:block; }
 
-    /* Form */
-    input, textarea { padding:12px; margin:10px 0; width:100%; max-width:500px; border:1px solid #ccc; border-radius:5px; font-size:1em; }
-    label { display:block; margin-top:15px; font-weight:500; color:#111; }
+/* Form fields */
+input, textarea { padding:12px; margin:10px 0; width:100%; max-width:500px; border:1px solid #ccc; border-radius:5px; font-size:1em; }
+label { display:block; margin-top:15px; font-weight:500; color:#111; }
 
-    /* Expert cards */
-    .experts { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:40px; }
-    .expert-card { background:white; border-radius:10px; padding:25px; width:280px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
-    .expert-card:hover { transform:translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.15);}
-    .expert-card h3 { margin-bottom:8px; font-family:'Montserrat', sans-serif; color:#111; }
-    .expert-card p { color:#555; margin-bottom:15px; font-size:0.95em; }
+/* Expert cards */
+.experts { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:40px; }
+.expert-card { background:white; border-radius:10px; padding:25px; width:280px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
+.expert-card:hover { transform:translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+.expert-card h3 { margin-bottom:8px; font-family:'Montserrat', sans-serif; color:#111; }
+.expert-card p { color:#555; margin-bottom:15px; font-size:0.95em; }
 
-    /* Portfolio page */
-    .portfolio { max-width:800px; margin:auto; background:white; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-top:40px; }
-    .portfolio img { width:100%; border-radius:10px; margin:20px 0; }
+/* Portfolio page */
+.portfolio { max-width:800px; margin:auto; background:white; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-top:40px; }
+.portfolio img { width:100%; border-radius:10px; margin:20px 0; }
+
+/* Canva embed */
+.canva-embed { position: relative; width: 100%; height: 0; padding-top: 56.25%; overflow:hidden; border-radius:8px; margin:20px 0; }
+.canva-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
 </style>
 </head>
 <body>
@@ -47,14 +49,21 @@
 <div id="home" class="page active">
     <div class="container">
         <header>
-            <div class="quote">"Complétez votre projet rapidement avec nos experts en architecture, professionnels et fiables."</div>
+            <div class="quote">"Complétez votre projet rapidement avec l’expertise d’architectes professionnels."</div>
             <h1>ArchiNow</h1>
-            <p>Connectez-vous avec des experts et transformez vos idées en projets finis efficacement.</p>
         </header>
+
+        <!-- Canva embed -->
+        <div class="canva-embed">
+          <iframe loading="lazy"
+            src="https://www.canva.com/design/DAHCJ7RVds0/P0w4-raEvSZiweqWZ8SOJg/view?embed"
+            allowfullscreen allow="fullscreen">
+          </iframe>
+        </div>
 
         <div style="margin-top:50px; text-align:center;">
             <label>Votre nom :</label>
-            <input type="text" id="studentName" placeholder="Ex. Rida Zbair">
+            <input type="text" id="studentName" placeholder="Écrivez votre nom">
             <div class="btn" onclick="goToPage('experts')">Continuer</div>
         </div>
     </div>
@@ -65,7 +74,7 @@
     <div class="container">
         <header>
             <h1>Nos Experts</h1>
-            <p>Choisissez l’expert pour recevoir votre projet.</p>
+            <p>Choisissez un expert pour recevoir votre projet.</p>
         </header>
 
         <div class="experts">
@@ -73,19 +82,35 @@
                 <h3>Ahmen Rida</h3>
                 <p>Expert Design</p>
                 <div class="btn" onclick="goToPortfolio('Ahmen Rida')">Voir Portfolio</div>
-                <div class="btn" onclick="selectExpert('Ahmen Rida')">Click & Upload</div>
+                <div class="btn" onclick="selectExpert('Ahmen Rida')">Choisir cet expert</div>
             </div>
 
             <div class="expert-card">
                 <h3>Salim Khalid</h3>
-                <p>Expert Plan & Coupes</p>
+                <p>Expert Plans & Coupes</p>
                 <div class="btn" onclick="goToPortfolio('Salim Khalid')">Voir Portfolio</div>
-                <div class="btn" onclick="selectExpert('Salim Khalid')">Click & Upload</div>
+                <div class="btn" onclick="selectExpert('Salim Khalid')">Choisir cet expert</div>
             </div>
         </div>
 
         <div style="text-align:center; margin-top:30px;">
             <div class="btn" onclick="goToPage('home')">Retour à l'accueil</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== PORTFOLIO PAGE ===== -->
+<div id="portfolio" class="page">
+    <div class="container">
+        <div class="portfolio">
+            <h1 id="portfolioExpertName">Portfolio</h1>
+            <p id="portfolioExpertDesc">Description de l'expert...</p>
+            <img id="portfolioImg1" src="" alt="Exemple 3D">
+            <img id="portfolioImg2" src="" alt="Exemple 3D">
+            <div style="text-align:center; margin-top:20px;">
+                <div class="btn" onclick="goToPage('experts')">Retour aux experts</div>
+                <div class="btn" onclick="goToPage('upload')">Envoyer une demande à cet expert</div>
+            </div>
         </div>
     </div>
 </div>
@@ -98,10 +123,10 @@
         </header>
 
         <form id="uploadForm" onsubmit="submitRequest(event)" style="max-width:600px; margin:auto;">
-            <label>Décrivez votre demande :</label>
-            <textarea id="projectDesc" rows="5" placeholder="Écrivez les détails de votre projet..."></textarea>
+            <label>Description de votre demande :</label>
+            <textarea id="projectDesc" rows="5" placeholder="Écrivez ici les détails de votre projet..."></textarea>
 
-            <label>Importer le fichier du projet :</label>
+            <label>Importer votre fichier :</label>
             <input type="file" id="projectFile">
 
             <label>Numéro de contact :</label>
@@ -112,21 +137,6 @@
 
         <div style="text-align:center; margin-top:30px;">
             <div class="btn" onclick="goToPage('experts')">Retour aux experts</div>
-        </div>
-    </div>
-</div>
-
-<!-- ===== PORTFOLIO PAGE ===== -->
-<div id="portfolio" class="page">
-    <div class="container">
-        <div class="portfolio">
-            <h1 id="portfolioExpertName">Portfolio</h1>
-            <p id="portfolioExpertDesc"></p>
-            <img id="portfolioImg1" src="" alt="Exemple 3D">
-            <img id="portfolioImg2" src="" alt="Exemple 3D">
-            <div style="text-align:center; margin-top:20px;">
-                <div class="btn" onclick="goToPage('experts')">Retour aux experts</div>
-            </div>
         </div>
     </div>
 </div>
@@ -146,17 +156,6 @@ function selectExpert(name) {
     goToPage('upload');
 }
 
-function submitRequest(e) {
-    e.preventDefault();
-    let student = document.getElementById('studentName').value || 'Anonyme';
-    let desc = document.getElementById('projectDesc').value;
-    let file = document.getElementById('projectFile').files[0]?.name || 'Aucun fichier';
-    let contact = document.getElementById('contactNumber').value;
-
-    alert(`Demande envoyée !\nNom: ${student}\nExpert: ${selectedExpert}\nFichier: ${file}\nContact: ${contact}\nDescription: ${desc}`);
-    goToPage('experts');
-}
-
 // Portfolio simulé
 function goToPortfolio(name) {
     let title = document.getElementById('portfolioExpertName');
@@ -166,17 +165,30 @@ function goToPortfolio(name) {
 
     if(name==='Ahmen Rida') {
         title.innerText = 'Ahmen Rida - Expert Design';
-        desc.innerText = 'Ahmen est spécialisé en design d\'intérieur et rendu 3D. Voici quelques exemples de ses projets.';
+        desc.innerText = 'Ahmen est spécialisé en design d’intérieur et rendu 3D. Voici quelques exemples de ses projets.';
         img1.src = 'https://via.placeholder.com/700x400?text=Design+3D+1';
         img2.src = 'https://via.placeholder.com/700x400?text=Design+3D+2';
     } else if(name==='Salim Khalid') {
-        title.innerText = 'Salim Khalid - Expert Plan & Coupes';
+        title.innerText = 'Salim Khalid - Expert Plans & Coupes';
         desc.innerText = 'Salim est expert en plans architecturaux et coupes. Découvrez ses réalisations.';
         img1.src = 'https://via.placeholder.com/700x400?text=Plan+Coupes+1';
         img2.src = 'https://via.placeholder.com/700x400?text=Plan+Coupes+2';
     }
 
+    selectedExpert = name;
+    document.getElementById('expertNameTitle').innerText = `Envoyer une demande à ${name}`;
     goToPage('portfolio');
+}
+
+function submitRequest(e) {
+    e.preventDefault();
+    let student = document.getElementById('studentName').value || 'Anonyme';
+    let desc = document.getElementById('projectDesc').value;
+    let file = document.getElementById('projectFile').files[0]?.name || 'Aucun fichier';
+    let contact = document.getElementById('contactNumber').value;
+
+    alert(`Demande envoyée !\nNom: ${student}\nExpert: ${selectedExpert}\nFichier: ${file}\nContact: ${contact}\nDescription: ${desc}`);
+    goToPage('experts');
 }
 </script>
 
