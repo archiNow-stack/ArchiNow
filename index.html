@@ -6,41 +6,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Roboto', sans-serif; background:#fefcf9; color:#111; line-height:1.6; }
-a { text-decoration:none; color: inherit; }
+body { font-family: 'Roboto', sans-serif; background:#fdfaf7; color:#111; line-height:1.6; }
+
+/* Container */
 .container { width:90%; max-width:1200px; margin:auto; }
 
-/* Header */
-header { padding:60px 20px; text-align:center; background:#fff; box-shadow:0 3px 15px rgba(0,0,0,0.1); position:relative; z-index:2; }
-.quote { font-style:italic; color:#555; font-size:1.2em; margin-bottom:15px; }
-h1 { font-family:'Montserrat', sans-serif; font-size:3em; color:#111; margin-bottom:10px; }
+/* Header / Accueil */
+header { text-align:center; padding:60px 20px; }
+.quote { font-style:italic; color:#555; font-size:1.3em; margin-bottom:15px; }
+h1 { font-family:'Montserrat', sans-serif; font-size:3em; color:#111; margin-bottom:20px; }
 
-/* Buttons */
-.btn { display:inline-block; padding:12px 25px; background:#111; color:white; border-radius:5px; margin:10px; cursor:pointer; transition:0.3s; font-weight:500; }
+/* Canva style box (accueil) */
+.canva-box { background:#fff6f0; padding:40px; border-radius:20px; box-shadow:0 5px 25px rgba(0,0,0,0.1); margin-bottom:50px; }
+
+/* Boutons */
+.btn { display:inline-block; padding:12px 25px; background:#111; color:white; border-radius:8px; margin:10px; cursor:pointer; transition:0.3s; font-weight:500; font-family:'Roboto',sans-serif;}
 .btn:hover { background:#444; }
 
 /* Pages */
-.page { display:none; padding:60px 0; }
+.page { display:none; padding:40px 0; }
 .active { display:block; }
 
-/* Form fields */
-input, textarea { padding:12px; margin:10px 0; width:100%; max-width:500px; border:1px solid #ccc; border-radius:5px; font-size:1em; }
+/* Form input */
+input, textarea { padding:12px; margin:10px 0; width:100%; max-width:500px; border:1px solid #ccc; border-radius:10px; font-size:1em; }
 label { display:block; margin-top:15px; font-weight:500; color:#111; }
 
-/* Expert cards */
-.experts { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:40px; }
-.expert-card { background:white; border-radius:10px; padding:25px; width:280px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
-.expert-card:hover { transform:translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.15);}
-.expert-card h3 { margin-bottom:8px; font-family:'Montserrat', sans-serif; color:#111; }
+/* Experts */
+.experts { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
+.expert-card { background:#fff; border-radius:15px; padding:25px; width:280px; text-align:center; box-shadow:0 5px 20px rgba(0,0,0,0.08); transition:0.3s; }
+.expert-card:hover { transform:translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.15);}
+.expert-card h3 { font-family:'Montserrat', sans-serif; margin-bottom:8px; }
 .expert-card p { color:#555; margin-bottom:15px; font-size:0.95em; }
 
-/* Portfolio page */
-.portfolio { max-width:800px; margin:auto; background:white; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-top:40px; }
-.portfolio img { width:100%; border-radius:10px; margin:20px 0; }
+/* Portfolio */
+.portfolio { max-width:800px; margin:auto; background:#fff6f0; padding:30px; border-radius:20px; box-shadow:0 5px 25px rgba(0,0,0,0.1); margin-top:40px;}
+.portfolio img { width:100%; border-radius:15px; margin:20px 0; }
 
-/* Canva embed */
-.canva-embed { position: relative; width: 100%; height: 0; padding-top: 56.25%; overflow:hidden; border-radius:8px; margin:20px 0; }
-.canva-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+/* Upload Form */
+.upload-form { max-width:600px; margin:auto; background:#fff6f0; padding:30px; border-radius:20px; box-shadow:0 5px 25px rgba(0,0,0,0.1);}
 </style>
 </head>
 <body>
@@ -49,22 +52,14 @@ label { display:block; margin-top:15px; font-weight:500; color:#111; }
 <div id="home" class="page active">
     <div class="container">
         <header>
-            <div class="quote">"Complétez votre projet rapidement avec l’expertise d’architectes professionnels."</div>
+            <div class="quote">"Transformez vos idées en projets complets rapidement avec des experts en architecture."</div>
             <h1>ArchiNow</h1>
         </header>
 
-        <!-- Canva embed -->
-        <div class="canva-embed">
-          <iframe loading="lazy"
-            src="https://www.canva.com/design/DAHCJ7RVds0/P0w4-raEvSZiweqWZ8SOJg/view?embed"
-            allowfullscreen allow="fullscreen">
-          </iframe>
-        </div>
-
-        <div style="margin-top:50px; text-align:center;">
-            <label>Votre nom :</label>
+        <div class="canva-box">
+            <p>Bienvenue sur ArchiNow ! Entrez votre nom pour commencer :</p>
             <input type="text" id="studentName" placeholder="Écrivez votre nom">
-            <div class="btn" onclick="goToPage('experts')">Continuer</div>
+            <div class="btn" onclick="goToPage('experts')">Commencer</div>
         </div>
     </div>
 </div>
@@ -74,7 +69,7 @@ label { display:block; margin-top:15px; font-weight:500; color:#111; }
     <div class="container">
         <header>
             <h1>Nos Experts</h1>
-            <p>Choisissez un expert pour recevoir votre projet.</p>
+            <p>Choisissez un expert pour recevoir votre projet :</p>
         </header>
 
         <div class="experts">
@@ -84,7 +79,6 @@ label { display:block; margin-top:15px; font-weight:500; color:#111; }
                 <div class="btn" onclick="goToPortfolio('Ahmen Rida')">Voir Portfolio</div>
                 <div class="btn" onclick="selectExpert('Ahmen Rida')">Choisir cet expert</div>
             </div>
-
             <div class="expert-card">
                 <h3>Salim Khalid</h3>
                 <p>Expert Plans & Coupes</p>
@@ -118,11 +112,9 @@ label { display:block; margin-top:15px; font-weight:500; color:#111; }
 <!-- ===== UPLOAD REQUEST PAGE ===== -->
 <div id="upload" class="page">
     <div class="container">
-        <header>
+        <div class="upload-form">
             <h1 id="expertNameTitle">Envoyer une demande</h1>
-        </header>
 
-        <form id="uploadForm" onsubmit="submitRequest(event)" style="max-width:600px; margin:auto;">
             <label>Description de votre demande :</label>
             <textarea id="projectDesc" rows="5" placeholder="Écrivez ici les détails de votre projet..."></textarea>
 
@@ -132,10 +124,7 @@ label { display:block; margin-top:15px; font-weight:500; color:#111; }
             <label>Numéro de contact :</label>
             <input type="text" id="contactNumber" placeholder="Ex. +212612345678">
 
-            <div class="btn" type="submit">Envoyer la demande</div>
-        </form>
-
-        <div style="text-align:center; margin-top:30px;">
+            <div class="btn" onclick="submitRequest()">Envoyer la demande</div>
             <div class="btn" onclick="goToPage('experts')">Retour aux experts</div>
         </div>
     </div>
@@ -156,7 +145,6 @@ function selectExpert(name) {
     goToPage('upload');
 }
 
-// Portfolio simulé
 function goToPortfolio(name) {
     let title = document.getElementById('portfolioExpertName');
     let desc = document.getElementById('portfolioExpertDesc');
@@ -174,14 +162,12 @@ function goToPortfolio(name) {
         img1.src = 'https://via.placeholder.com/700x400?text=Plan+Coupes+1';
         img2.src = 'https://via.placeholder.com/700x400?text=Plan+Coupes+2';
     }
-
     selectedExpert = name;
     document.getElementById('expertNameTitle').innerText = `Envoyer une demande à ${name}`;
     goToPage('portfolio');
 }
 
-function submitRequest(e) {
-    e.preventDefault();
+function submitRequest() {
     let student = document.getElementById('studentName').value || 'Anonyme';
     let desc = document.getElementById('projectDesc').value;
     let file = document.getElementById('projectFile').files[0]?.name || 'Aucun fichier';
