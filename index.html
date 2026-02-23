@@ -115,16 +115,25 @@ label { display:block; margin-top:15px; font-weight:500; color:#111; }
         <div class="upload-form">
             <h1 id="expertNameTitle">Envoyer une demande</h1>
 
-            <label>Description de votre demande :</label>
-            <textarea id="projectDesc" rows="5" placeholder="Écrivez ici les détails de votre projet..."></textarea>
+            <!-- Formspree intégré pour envoi réel par email -->
+            <form id="uploadForm" action="https://formspree.io/f/TONCODE" method="POST" enctype="multipart/form-data">
+                <label>Nom :</label>
+                <input type="text" name="nom" id="studentNameForm" placeholder="Votre nom" required>
 
-            <label>Importer votre fichier :</label>
-            <input type="file" id="projectFile">
+                <label>Description de votre demande :</label>
+                <textarea name="description" id="projectDesc" rows="5" placeholder="Écrivez ici les détails de votre projet..." required></textarea>
 
-            <label>Numéro de contact :</label>
-            <input type="text" id="contactNumber" placeholder="Ex. +212612345678">
+                <label>Importer votre fichier :</label>
+                <input type="file" name="fichier" id="projectFile">
 
-            <div class="btn" onclick="submitRequest()">Envoyer la demande</div>
+                <label>Numéro de contact :</label>
+                <input type="text" name="contact" id="contactNumber" placeholder="Ex. +212612345678">
+
+                <input type="hidden" name="expert" id="expertHidden">
+
+                <button type="submit" class="btn">Envoyer la demande</button>
+            </form>
+
             <div class="btn" onclick="goToPage('experts')">Retour aux experts</div>
         </div>
     </div>
@@ -142,6 +151,7 @@ function goToPage(pageId) {
 function selectExpert(name) {
     selectedExpert = name;
     document.getElementById('expertNameTitle').innerText = `Envoyer une demande à ${name}`;
+    document.getElementById('expertHidden').value = name;
     goToPage('upload');
 }
 
@@ -164,17 +174,8 @@ function goToPortfolio(name) {
     }
     selectedExpert = name;
     document.getElementById('expertNameTitle').innerText = `Envoyer une demande à ${name}`;
+    document.getElementById('expertHidden').value = name;
     goToPage('portfolio');
-}
-
-function submitRequest() {
-    let student = document.getElementById('studentName').value || 'Anonyme';
-    let desc = document.getElementById('projectDesc').value;
-    let file = document.getElementById('projectFile').files[0]?.name || 'Aucun fichier';
-    let contact = document.getElementById('contactNumber').value;
-
-    alert(`Demande envoyée !\nNom: ${student}\nExpert: ${selectedExpert}\nFichier: ${file}\nContact: ${contact}\nDescription: ${desc}`);
-    goToPage('experts');
 }
 </script>
 
